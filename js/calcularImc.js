@@ -1,3 +1,4 @@
+
 var pacientes = document.querySelectorAll(".paciente");
 
 for (let index = 0; index < pacientes.length; index++) {
@@ -21,10 +22,15 @@ for (let index = 0; index < pacientes.length; index++) {
     }
 
     if(pesoEsValido && alturaEsValida){
-        var imc = peso/(altura*altura);
-        tdImc.textContent = imc.toFixed(2);
+
+        tdImc.textContent = calcularIMC(peso, altura);
     }
     
+}
+
+function calcularIMC(peso,altura){
+    var imc = peso/(altura*altura);
+    return imc.toFixed(2);
 }
 
 /* Cómo seleccionar diversos elementos con querySelectorAll().
